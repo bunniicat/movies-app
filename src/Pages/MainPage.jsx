@@ -1,7 +1,8 @@
-import { Box, Button, Heading, Input } from '@chakra-ui/react';
+import { Box, Button, Heading, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import axios from 'axios';
 import { useState } from 'react';
 import MovieResult from '../Components/MovieResult';
+import { SearchIcon } from '@chakra-ui/icons';
 
 const MainPage = () => {
   const [movie, setMovie] = useState(null);
@@ -29,8 +30,14 @@ const MainPage = () => {
 
   return (
     <Box w={'90%'} margin={'auto'} padding={'15px'} marginTop={'30px'}>
-      <Input onChange={handleSearchInputChange} />
-      <Button onClick={handleSearch}>Search</Button>
+      <InputGroup width={'50%'} margin={'auto'} mb={'50px'}>
+        <Input rounded={'3xl'} onChange={handleSearchInputChange} placeholder='Search movie by name...' />
+        <InputRightElement w={'3rem'}>
+          <Button onClick={handleSearch} width={'100%'} rounded={'3xl'}>
+            <SearchIcon />
+          </Button>
+        </InputRightElement>
+      </InputGroup>
       <Box>
         {hasMovieResult ? <MovieResult movie={movie} /> : <Heading>You have not searched for a movie yet!</Heading>}
       </Box>

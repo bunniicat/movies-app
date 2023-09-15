@@ -5,7 +5,7 @@ const MovieResult = ({ movie }) => {
 
   return (
     <Box mt={'30px'} borderBottom={'2px solid #dc0073'} paddingBottom={'30px'}>
-      <Flex justifyContent={'space-between'}>
+      <Flex justifyContent={'space-between'} flexDirection={{ base: 'column', lg: 'row' }}>
         <Box>
           <Heading>{movie.Title}</Heading>
           <HStack mb={'10px'}>
@@ -43,8 +43,8 @@ const MovieResult = ({ movie }) => {
             </VStack>
           </HStack>
         </Box>
-        <Box border={'2px solid #dc0073'} padding={'10px'} rounded={'md'}>
-          <Image src={movie.Poster} alt='movie poster' rounded={'md'} />
+        <Box border={'2px solid #dc0073'} padding={'10px'} rounded={'md'} mt={{ base: '20px', lg: '0px' }}>
+          <Image src={movie.Poster} alt='movie poster' rounded={'md'} margin={'auto'} />
         </Box>
       </Flex>
     </Box>

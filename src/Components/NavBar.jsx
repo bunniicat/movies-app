@@ -1,6 +1,6 @@
-import { Box, Flex, HStack, Input, InputGroup, InputLeftElement, Text } from '@chakra-ui/react';
+import { Box, Flex, HStack, Text, Tooltip } from '@chakra-ui/react';
 import { MdMovieFilter } from 'react-icons/md';
-import { Search2Icon, QuestionIcon } from '@chakra-ui/icons';
+import { QuestionIcon } from '@chakra-ui/icons';
 
 const NavBar = () => {
   return (
@@ -13,23 +13,10 @@ const NavBar = () => {
           </Text>
         </HStack>
 
-        <Box>
-          <InputGroup w={'500px'}>
-            <InputLeftElement pointerEvents={'none'}>
-              <Search2Icon color={'gray.300'} />
-            </InputLeftElement>
-            <Input
-              placeholder='Search for movie...'
-              focusBorderColor='#f42272'
-              _placeholder={{ color: 'whiteAlpha.700' }}
-              color={'whiteAlpha.900'}
-              rounded={'3xl'}
-            />
-          </InputGroup>
-        </Box>
-
         <HStack>
-          <QuestionIcon />
+          <Tooltip label='search for a movie by movie title using the search bar' aria-label='a tooltip'>
+            <QuestionIcon fontSize={'20px'} />
+          </Tooltip>
         </HStack>
       </Flex>
     </Box>
