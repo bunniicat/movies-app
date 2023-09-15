@@ -1,6 +1,6 @@
 import { Box, Button, Heading, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MovieResult from '../Components/MovieResult';
 import { SearchIcon } from '@chakra-ui/icons';
 
@@ -20,13 +20,15 @@ const MainPage = () => {
 
     const response = await axios.get(searchUrl);
     setMovie(response.data);
-    console.log(movie);
+  };
+
+  useEffect(() => {
     if (movie === null) {
       setHasMovieResult(false);
     } else {
       setHasMovieResult(true);
     }
-  };
+  }, [movie]);
 
   return (
     <Box w={'90%'} margin={'auto'} padding={'15px'} marginTop={'30px'}>

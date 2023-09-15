@@ -16,7 +16,7 @@ const MovieResult = ({ movie }) => {
           <HStack mt={'10px'}>
             {movieGenre.map((genre) => {
               return (
-                <Tag color={'white'} backgroundColor={'#6e1040'} size={'md'}>
+                <Tag color={'white'} backgroundColor={'#6e1040'} size={'md'} key={genre}>
                   {genre}
                 </Tag>
               );
