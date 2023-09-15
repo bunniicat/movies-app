@@ -8,7 +8,7 @@ const NavBar = () => {
       <Flex justifyContent={'space-between'} alignItems={'center'} padding={'15px'}>
         <HStack>
           <MdMovieFilter fontSize={'40px'} color={'white'} />
-          <Text fontSize={'1.3em'} fontWeight={'bold'} color={'whiteAlpha.900'}>
+          <Text fontSize={'1.3em'} fontWeight={'bold'}>
             Movie Searching
           </Text>
         </HStack>
@@ -23,6 +23,7 @@ const NavBar = () => {
               focusBorderColor='#f42272'
               _placeholder={{ color: 'whiteAlpha.700' }}
               color={'whiteAlpha.900'}
+              rounded={'3xl'}
             />
           </InputGroup>
         </Box>

@@ -6,7 +6,7 @@ const theme = extendTheme({
       //body
       body: {
         bg: '#181818',
-        color: '#2F2F2F',
+        color: 'whiteAlpha.900',
       },
     },
   },
